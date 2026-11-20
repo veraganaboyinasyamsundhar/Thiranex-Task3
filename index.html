@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A focused, local-first to-do list to plan, complete, and manage everyday tasks.">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Daymark — A little more focus</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to tasks</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Application sidebar">
+      <a class="brand" href="index.html" aria-label="Daymark home">
+        <span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>daymark<span class="brand-dot">.</span></span>
+      </a>
+      <div class="sidebar-note">
+        <span class="sidebar-kicker">YOUR SPACE</span>
+        <p>A calmer way to<br>get things done.</p>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="avatar" aria-hidden="true">D</span>
+        <span><strong>My day</strong><small>Personal workspace</small></span>
+      </div>
+    </aside>
+
+    <main class="main-content" id="main-content">
+      <header class="topbar">
+        <p class="date-label" id="today-label">YOUR DAY, AT A GLANCE</p>
+        <span class="local-badge"><span aria-hidden="true"></span> Saved on this device</span>
+      </header>
+
+      <section class="welcome" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">A FRESH START</p>
+          <h1 id="page-title">Make room for<br><span>what matters.</span></h1>
+          <p class="welcome-copy">One step at a time. Add a task and build a little momentum.</p>
+        </div>
+        <div class="day-illustration" aria-hidden="true">
+          <span class="sun-halo"></span><span class="sun"></span>
+          <span class="cloud cloud-one"></span><span class="cloud cloud-two"></span>
+          <span class="hill hill-back"></span><span class="hill hill-front"></span>
+        </div>
+      </section>
+
+      <section class="task-workspace" aria-labelledby="tasks-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR LIST</p>
+            <h2 id="tasks-heading">Today’s tasks <span class="task-count" id="task-count">0</span></h2>
+          </div>
+          <button class="clear-button" id="clear-completed" type="button" hidden>Clear completed</button>
+        </div>
+
+        <form class="add-form" id="add-form">
+          <label class="sr-only" for="new-task">Add a task</label>
+          <span class="add-symbol" aria-hidden="true">+</span>
+          <input id="new-task" name="task" type="text" maxlength="160" placeholder="What needs to get done?" autocomplete="off" required>
+          <button class="add-button" type="submit">Add task <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div class="list-toolbar">
+          <div class="filter-tabs" role="group" aria-label="Filter tasks" id="filter-tabs">
+            <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">All <span id="all-total">0</span></button>
+            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+          </div>
+          <p class="remaining-count" id="remaining-count">Nothing on your list yet</p>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Tasks" aria-live="polite" aria-relevant="additions removals text"></ul>
+        <div class="empty-state" id="empty-state">
+          <span class="empty-art" aria-hidden="true"><span>✓</span></span>
+          <h3 id="empty-title">A clear slate.</h3>
+          <p id="empty-copy">Add your first task above and take it from there.</p>
+        </div>
+        <p class="keyboard-hint"><kbd>Enter</kbd> to add a task <span aria-hidden="true">·</span> Your list saves automatically</p>
+        <p class="sr-only" id="announcements" role="status" aria-live="polite"></p>
+      </section>
+      <footer class="page-footer"><span>Small steps still move you forward.</span><span>DAYMARK <span aria-hidden="true">✳</span> TASK 03</span></footer>
+    </main>
+  </div>
+</body>
+</html>
